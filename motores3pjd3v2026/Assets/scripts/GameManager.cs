@@ -1,91 +1,92 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
-using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
+    // Singleton
     public static GameManager Instance;
 
-    [Header("Estado Atual")]
-    public GameState CurrentState;
+    // Estados do jogo
+    public enum GameState
+    {
+        Iniciando,
+        MenuPrincipal,
+        Gameplay
+    }
 
-    [Header("Player Input")]
-    [SerializeField] private PlayerInput playerInput;
+    // Estado atual
+    public GameState currentState;
+
+    // Input do jogador
+    public PlayerInput playerInput;
 
     private void Awake()
     {
-        // Singleton
-        if (Instance != null && Instance != this)
+        // Faz existir apenas 1 GameManager
+        if (Instance == null)
+        {
+            Instance = this;
+
+            // Não destrói ao trocar de cena
+            DontDestroyOnLoad(gameObject);
+        }
+        else
         {
             Destroy(gameObject);
-            return;
         }
-
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
-
-        Debug.Log("GameManager iniciado");
     }
 
     private void Start()
     {
+        // Estado inicial
         ChangeState(GameState.Iniciando);
 
-        // Vai para Splash automaticamente
+        // Carrega Splash
         LoadScene("Splash");
     }
 
+    // Troca estado
     public void ChangeState(GameState newState)
     {
-        CurrentState = newState;
+        currentState = newState;
 
-        Debug.Log("Estado Atual: " + CurrentState);
+        Debug.Log("Estado atual: " + currentState);
     }
 
+    // Carregar cenas
     public void LoadScene(string sceneName)
     {
-        StartCoroutine(LoadSceneRoutine(sceneName));
-    }
+        SceneManager.LoadScene(sceneName);
 
-    private IEnumerator LoadSceneRoutine(string sceneName)
-    {
-        yield return SceneManager.LoadSceneAsync(sceneName);
-
-        // Atualiza estado conforme cena
+        // Define estado baseado na cena
         switch (sceneName)
         {
-            case "Splash":
-                ChangeState(GameState.Iniciando);
-                break;
-
             case "MenuPrincipal":
                 ChangeState(GameState.MenuPrincipal);
                 break;
 
             case "GetStarted_Scene":
                 ChangeState(GameState.Gameplay);
-                AssignPlayerInput();
                 break;
         }
     }
 
-    private void AssignPlayerInput()
+    // Conectar input do jogador
+    public void AssignPlayerInput(PlayerInput input)
     {
-        if (playerInput != null)
-        {
-            playerInput.ActivateInput();
-            Debug.Log("Input alocado ao jogador");
-        }
-        else
-        {
-            Debug.LogWarning("PlayerInput não configurado no GameManager");
-        }
+        playerInput = input;
+
+        Debug.Log("Input conectado!");
     }
 
+    // Sair do jogo
     public void QuitGame()
     {
         Debug.Log("Saindo do jogo");
+
         Application.Quit();
     }
-}
+
+    
+    }

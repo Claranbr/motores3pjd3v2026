@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class MainMenuUI : MonoBehaviour
+public class MainMenu : MonoBehaviour
 {
     public void StartGame()
     {
@@ -9,10 +9,8 @@ public class MainMenuUI : MonoBehaviour
 
     public void QuitGame()
     {
-        GameManager.Instance.QuitGame();
+        Debug.Log("Saiu do jogo");
+
+        Application.Quit();
     }
-    
-    
-    
-    
-    }
+}
