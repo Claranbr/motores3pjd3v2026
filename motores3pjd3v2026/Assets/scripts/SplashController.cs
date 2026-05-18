@@ -7,7 +7,7 @@ public class SplashController : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        GameManager.Instance.LoadScene("MenuPrincipal");
+        GameManager.Instance.LoadScene("Menu_principal");
     }
 
 

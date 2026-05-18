@@ -10,7 +10,7 @@ EditorBuildSettings:
     guid: da3cfdef2f7596d43901e766dd433ce4
   - enabled: 1
     path: Assets/Scenes/Splash.unity
-    guid: 58b52839d0be8d04584236054cd8170b
+    guid: 07aec60f9acf4bb49b0f9bb5d4d4bf2f
   - enabled: 1
     path: Assets/Scenes/Menu_principal.unity
     guid: 2b6c8510b2a28974f97850341bec7941
