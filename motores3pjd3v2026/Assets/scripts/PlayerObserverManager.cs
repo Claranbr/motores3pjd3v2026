@@ -1,0 +1,11 @@
+using System;
+
+public static class PlayerObserverManager
+{
+    public static Action<int> OnCoinsChanged;
+
+    public static void NotifyCoinsChanged(int coins)
+    {
+        OnCoinsChanged?.Invoke(coins);
+    }
+}
