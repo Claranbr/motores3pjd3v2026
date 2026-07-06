@@ -587,10 +587,27 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1804703078109025515, guid: 332df604d1fc7fd46ae4013ce9b4a5d6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1453272651}
-    - targetCorrespondingSourceObject: {fileID: 1804703078109025515, guid: 332df604d1fc7fd46ae4013ce9b4a5d6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1453272652}
+    - targetCorrespondingSourceObject: {fileID: 5633379113638269974, guid: 332df604d1fc7fd46ae4013ce9b4a5d6, type: 3}
+      insertIndex: 8
+      addedObject: {fileID: 112204323}
   m_SourcePrefab: {fileID: 100100000, guid: 332df604d1fc7fd46ae4013ce9b4a5d6, type: 3}
+--- !u!1 &112204322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5633379113638269974, guid: 332df604d1fc7fd46ae4013ce9b4a5d6, type: 3}
+  m_PrefabInstance: {fileID: 112204321}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &112204323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112204322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6dbc25fbdcc4b54a95c4ef5eaf6cb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCoins
 --- !u!1001 &435336853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2124,19 +2141,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1453272652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1453272648}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6dbc25fbdcc4b54a95c4ef5eaf6cb67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCoins
-  coins: 0
 --- !u!1 &1467541520
 GameObject:
   m_ObjectHideFlags: 0
@@ -2906,10 +2910,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.7889075
-  m_Height: 7.889075
+  m_Radius: 0.58263636
+  m_Height: 5.8393555
   m_Direction: 1
-  m_Center: {x: -0.035520792, y: 0.65240026, z: -0.006526828}
+  m_Center: {x: -0.035520792, y: -0.37244827, z: 0.19974442}
 --- !u!23 &2139599877
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2976,7 +2980,7 @@ Transform:
   m_GameObject: {fileID: 2139599873}
   serializedVersion: 2
   m_LocalRotation: {x: 0.052682947, y: -0.022852892, z: -0.67686343, w: 0.73386526}
-  m_LocalPosition: {x: 2.62, y: 5.88, z: 3.9}
+  m_LocalPosition: {x: 2.607, y: 5.877, z: 3.899}
   m_LocalScale: {x: 0.5, y: 0.1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []

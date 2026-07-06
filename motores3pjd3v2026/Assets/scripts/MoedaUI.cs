@@ -7,6 +7,7 @@ public class CoinUI : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.Log("CoinUI habilitado");
         PlayerObserverManager.OnCoinsChanged += UpdateCoins;
     }
 
@@ -15,8 +16,9 @@ public class CoinUI : MonoBehaviour
         PlayerObserverManager.OnCoinsChanged -= UpdateCoins;
     }
 
-    private void UpdateCoins(int coins)
+    private void UpdateCoins(int amount)
     {
-        coinText.text = "Moedas: " + coins;
+        Debug.Log("Interface recebeu: " + amount);
+        coinText.text = "Moedas: " + amount;
     }
 }
